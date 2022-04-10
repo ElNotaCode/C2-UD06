@@ -2,6 +2,8 @@ package ej8;
 
 import java.util.Scanner;
 
+//Autor Eloi Martorell Martin 10/04/2022
+
 public class ej8App {
 
 	public static void main(String[] args) {

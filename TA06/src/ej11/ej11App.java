@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
+//Autor Eloi Martorell Martin 10/04/2022
+
 public class ej11App {
 
 	public static void main(String[] args) {
