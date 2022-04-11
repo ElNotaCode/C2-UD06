@@ -20,7 +20,8 @@ public class ej11App {
 		array1 = rellenarArray(array1);
 		
 		//creamos el nuevo array asignandole el valor del primero
-		int array2[] = Arrays.copyOf(array1, array1.length); //también podría ser array size
+		//int array2[] = Arrays.copyOf(array1, array1.length); //también podría ser array size
+		int array2[] = Arrays.copyOf(array1, array1.length);
 		array2 = rellenarArray(array2);
 	
 		int array3[] = multiplicarArrays(array1, array2);

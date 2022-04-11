@@ -1,6 +1,5 @@
 package ej12;
 
-import java.util.Iterator;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -16,20 +15,39 @@ public class ej12App {
 		int arraySize = sc.nextInt();
 		
 		int array[] = new int[arraySize];
+		
+		int digito = 0;
 		boolean digitoCheck = false;
 		
 		while (!digitoCheck) {
 			System.out.println("Introduce solo un digito: ");
-			int digito = sc.nextInt();
+			digito = sc.nextInt(); // en caso que tuviera esto en un metodo me da error el sc, al igual se puede arreglar con un metodo que use el scanner para todo,
+			//otros ejercicios intentaré ver si se puede hacer
 			
 			if(digito < 10 && digito > -1)
 				digitoCheck = true;
 		}
 		
 		array = rellenarArray(array);
+		int arrayDigito[] = comprobarDigito(array, digito);
+		
+
+			System.out.print("De los " + arraySize + " numeros generados, ");
+			imprimirArray(arrayDigito);
+			System.out.print(" terminan con el numero " + digito + ".");
+		
 		
 		sc.close();
 
+	}
+	
+	//metodo para imprimir array
+	public static void imprimirArray (int array[]) {
+		
+		for (int i = 0; i < array.length; i++) 
+			System.out.print(array[i] + " ");
+		
+		
 	}
 	
 	//metodo para generar arrays aleatorios
@@ -44,7 +62,28 @@ public class ej12App {
 	}
 	
 	//metrodo comprobar digito
-	
-	//metodo recorrer el array y generar uno nuevo a partir de lo sacado
+	public static int[] comprobarDigito(int array[], int digito) {
+		int counter = 0;
+		int x = 0;
+		//recorremos el array y si terminan con el digito introducido
+		for (int i = 0; i < array.length; i++) {
+			
+			if(array[i] % 10 == digito)
+				counter++;
+			
+		}
+		
+		int arrayDigito[] = new int [counter];
+		
+		for (int i = 0; i < array.length; i++) {
+			
+			if(array[i] % 10 == digito)
+				arrayDigito[x++] = array[i];
+			
+		}
+		
+		return arrayDigito;
+		
+	}
 
 }
